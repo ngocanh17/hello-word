@@ -275,9 +275,9 @@
                         <!-- start blog social share -->
                         <div class="mu-blog-social">
                           <ul class="mu-news-social-nav">
-                            <li>Tương tác với chúng tôi:</li>
+                            <li>MẠNG XÃ HỘI :</li>
                             <li><a href="https://www.facebook.com/devzone.vn"; target="_blank"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="https://www.youtube.com/channel/UCZ89xqQ5QadBmyMh18Vbhig" ; target="_blank""><span class="fa fa-youtube"></span></a></li> 
+                      <li><a href="https://www.youtube.com/channel/UCZ89xqQ5QadBmyMh18Vbhig" ; target="_blank""><span class="fa fa-youtube"></span></a></li> 
                           </ul>
                         </div>
                         <!-- End blog social share -->
