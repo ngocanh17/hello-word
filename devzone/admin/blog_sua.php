@@ -91,7 +91,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Quản trị blog</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="#">Quản trị hệ thống</a></li>
+                            <li class="breadcrumb-item"><a href="index.php">Quản trị hệ thống</a></li>
                             <li class="breadcrumb-item active">Quản trị blog</li>
                         </ol>
                         <div class="card mb-4">
@@ -104,7 +104,7 @@
                                     // Viết ra các câu lệnh để load dữ liệu và hiển thị lên Webpage; giúp người quản trị chỉ cần hiệu chỉnh những nội dung mà họ mong muốn
                                         
                                     // 1. Load file cấu hình để kết nối đến máy chủ CSDL, CSDL
-                                    $ket_noi = mysqli_connect("localhost","root","","devzone.db");
+                                    include('../config.php');
 
 
                                     // 2. Viết câu lệnh truy vấn để lấy ra được DỮ LIỆU MONG MUỐN (TIN TỨC đã lưu trong CSDL)
@@ -155,12 +155,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
+                            <div class="text-muted">Cộng đồng lập trình DevZone</div>
                         </div>
                     </div>
                 </footer>

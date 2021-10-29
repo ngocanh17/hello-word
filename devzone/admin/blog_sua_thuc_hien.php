@@ -12,9 +12,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-	    <?php         
+        <?php         
             // 1. Load file cấu hình để kết nối đến máy chủ CSDL, CSDL
-            $ket_noi = mysqli_connect("localhost","root","","devzone.db");
+            include('../config.php');
 
 
             // 2. Lấy ra được các dữ liệu mà trang TIN TỨC THÊM MỚI chuyển sang
@@ -54,16 +54,16 @@
 
             // 5. Hiển thị ra thông báo các bạn đã sửa tin tức thành công và đẩy các bạn về trang quản trị tin tức
             echo "
-            	<script type='text/javascript'>
-            		window.alert('Bạn đã sửa bài viết thành công');
-            	</script>
+                <script type='text/javascript'>
+                    window.alert('Bạn đã sửa bài viết thành công');
+                </script>
             ";
 
             echo "
-            	<script type='text/javascript'>
-            		window.location.href='quan_tri_blog.php';
-            	</script>
+                <script type='text/javascript'>
+                    window.location.href='quan_tri_blog.php';
+                </script>
             ";
-	    ;?>
+        ;?>
     </body>
 </html>

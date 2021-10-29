@@ -13,8 +13,8 @@
     </head>
 
     <body class="sb-nav-fixed">
-    	           <?php
-                    $ket_noi = mysqli_connect("localhost","root","","devzone.db");
+                 <?php
+                    include('config.php');
 
                     if(isset($_POST['THUCHIEN']))
                     {

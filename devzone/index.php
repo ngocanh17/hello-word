@@ -399,7 +399,7 @@
 
               <?php
               //1. Load file....
-                 $ket_noi = mysqli_connect("localhost", "root", "", "devzone.db");
+                 include('config.php');
               //2. Viết câu lệnh truy vấn để lấy ra được dữ liệu mong muốn ( khóa học đã lưu trong CSDL)
                 $sql =  "  
                           SELECT * 
@@ -471,7 +471,7 @@
              <!-- start course content container -->
                 <?php
               //1. Load file....
-                 $ket_noi = mysqli_connect("localhost", "root", "", "devzone.db");
+                include('config.php');
               //2. Viết câu lệnh truy vấn để lấy ra được dữ liệu mong muốn ( khóa học đã lưu trong CSDL)
                 $sql = "
                       SELECT * 
@@ -614,7 +614,7 @@
 
               <?php
                //Kết nối đến máy chủ CSDL
-                  $ket_noi = mysqli_connect("localhost","root","","devzone.db");
+                  include('config.php');
                 //Câu lệnh lấy ra dữ liệu
                   $sql = "SELECT * FROM `tbl_blog` limit 3 ";
                 //Thực thi câu lệnh truy vấn

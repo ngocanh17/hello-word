@@ -15,7 +15,7 @@
     <body class="sb-nav-fixed">
         <?php 
             // 1. Load file cấu hình để kết nối đến máy chủ CSDL, CSDL
-             $ket_noi = mysqli_connect("localhost", "root", "", "devzone.db");
+             include('../config.php');
 
 
 

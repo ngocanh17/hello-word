@@ -162,7 +162,7 @@
                 <!-- start course content container -->
                 <?php
               //1. Load file....
-                 $ket_noi = mysqli_connect("localhost", "root", "", "devzone.db");
+                 include('config.php');
               //2. Viết câu lệnh truy vấn để lấy ra được dữ liệu mong muốn ( khóa học đã lưu trong CSDL)
                 $sql =  "  
                           SELECT * 
@@ -213,6 +213,8 @@
               </div>
 
 
+
+
               <div class="col-md-3">
                 <!-- start sidebar -->
                 <aside class="mu-sidebar">
@@ -224,7 +226,7 @@
                     
                       <?php
               //1. Load file....
-                 $ket_noi = mysqli_connect("localhost", "root", "", "devzone.db");
+                 include('config.php');
               //2. Viết câu lệnh truy vấn để lấy ra được dữ liệu mong muốn ( khóa học đã lưu trong CSDL)
                 $sql = "  
                           SELECT * 

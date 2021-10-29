@@ -14,7 +14,7 @@
     <body class="sb-nav-fixed">
         <?php
                 // 1. Kết nối đến máy chủ dữ liệu và đến csdl mà các b muốn lấy dl
-                $ket_noi = mysqli_connect("localhost","root","","devzone.db");
+                include('../config.php');
                 //2. Lấy ra dữ liệu mong muốn(Tin tức)
                 $id_nguoi_dung = $_POST['txtid'];
                 $ten_nguoi_dung = $_POST['txttennd'];

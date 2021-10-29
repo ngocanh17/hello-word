@@ -14,7 +14,7 @@
     <body class="sb-nav-fixed">
         <?php 
             // 1. Load file cấu hình để kết nối đến máy chủ CSDL, CSDL
-            $ket_noi = mysqli_connect("localhost","root","","devzone.db");
+            include('../config.php');
 
 
             // 2. Lấy ra ID tin tức mà các bạn muốn XÓA

@@ -167,7 +167,7 @@
                         
                           <?php
                            //Kết nối đến máy chủ CSDL
-                              $ket_noi = mysqli_connect("localhost","root","","devzone.db");
+                              include('config.php');
                             //Câu lệnh lấy ra dữ liệu
                               $id_blog = $_GET["id"];
 
@@ -196,6 +196,7 @@
                         <!-- start blog social share -->
                         <div class="mu-blog-social">
                           <ul class="mu-news-social-nav">
+                          
                             <li>MẠNG XÃ HỘI :</li>
                             <li><a href="https://www.facebook.com/devzone.vn"; target="_blank"><span class="fa fa-facebook"></span></a></li>
                       <li><a href="https://www.youtube.com/channel/UCZ89xqQ5QadBmyMh18Vbhig" ; target="_blank""><span class="fa fa-youtube"></span></a></li>
@@ -217,7 +218,7 @@
                         <div id="mu-related-item-slide">
                         <?php
                          //Kết nối đến máy chủ CSDL
-                            $ket_noi = mysqli_connect("localhost","root","","devzone.db");
+                           include('config.php');
                           //Câu lệnh lấy ra dữ liệu
                             $sql = "SELECT * FROM `tbl_blog` ";
                           //Thực thi câu lệnh truy vấn
@@ -274,7 +275,7 @@
                     
                       <?php
               //1. Load file....
-                 $ket_noi = mysqli_connect("localhost", "root", "", "devzone.db");
+                 include('config.php');
               //2. Viết câu lệnh truy vấn để lấy ra được dữ liệu mong muốn ( khóa học đã lưu trong CSDL)
                 $sql = "  
                           SELECT * 

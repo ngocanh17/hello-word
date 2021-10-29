@@ -13,36 +13,36 @@
     </head>
 
     <body class="sb-nav-fixed">
-    	<?php  
-	        //1.
-            $ket_noi = mysqli_connect("localhost","root","","devzone.db");
+        <?php  
+            //1.
+            include('config.php');
 
-	         //2. 
-	         $ho_ten = $_POST["txtHoTen"];
-	         $email = $_POST["txtEmail"];
-	         $sdt = $_POST["txtSdt"];
+             //2. 
+             $ho_ten = $_POST["txtHoTen"];
+             $email = $_POST["txtEmail"];
+             $sdt = $_POST["txtSdt"];
              $khoa_hoc = $_POST["txtKhoaHoc"];
              $loi_nhan = $_POST["txtLoiNhan"];
 
 
-	         //3. Viết câu lệnh truy vấn để thêm mới dữ liệu vào bảng TIN TỨC trong CSDL
-	         $sql= "
-	         		INSERT INTO `tbl_dang_ki_hoc` (`dang_ki_hoc_id`, `ho_ten`, `email`, `sdt`, `khoa_hoc`, `loi_nhan`, `ngay_gui`) 
+             //3. Viết câu lệnh truy vấn để thêm mới dữ liệu vào bảng TIN TỨC trong CSDL
+             $sql= "
+                    INSERT INTO `tbl_dang_ki_hoc` (`dang_ki_hoc_id`, `ho_ten`, `email`, `sdt`, `khoa_hoc`, `loi_nhan`, `ngay_gui`) 
                     VALUES (NULL, '".$ho_ten."', '".$email."', '".$sdt."', '".$khoa_hoc."', '".$loi_nhan."', current_timestamp())
                     ";
-	              
-	          //4.
-	          $noi_dung_dang_ki_hoc = mysqli_query($ket_noi,$sql);
-	          //5. 
-	          echo "
-            	<script type='text/javascript'>
-            		window.alert('Bạn đã đăng kí khóa học thành công');
-            	</script>
+                  
+              //4.
+              $noi_dung_dang_ki_hoc = mysqli_query($ket_noi,$sql);
+              //5. 
+              echo "
+                <script type='text/javascript'>
+                    window.alert('Bạn đã đăng kí khóa học thành công');
+                </script>
             ";
-	          echo "
-            	<script type='text/javascript'>
-            		window.location.href='dang_ki_hoc.php';
-            	</script>
+              echo "
+                <script type='text/javascript'>
+                    window.location.href='dang_ki_hoc.php';
+                </script>
             ";
 
     ;?>

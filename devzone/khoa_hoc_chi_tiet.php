@@ -165,7 +165,7 @@
                     <div class="col-md-6 col-sm-6">
                      <?php
               //1. Load file....
-                 $ket_noi = mysqli_connect("localhost", "root", "", "devzone.db");
+                 include('config.php');
               //2. Viết câu lệnh truy vấn để lấy ra được dữ liệu mong muốn ( khóa học đã lưu trong CSDL)
                $khoa_hoc_id = $_GET["id"];
                 
@@ -225,7 +225,7 @@
                     
                       <?php
               //1. Load file....
-                 $ket_noi = mysqli_connect("localhost", "root", "", "devzone.db");
+                 include('config.php');
               //2. Viết câu lệnh truy vấn để lấy ra được dữ liệu mong muốn ( khóa học đã lưu trong CSDL)
                 $sql = "  
                           SELECT * 

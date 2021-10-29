@@ -144,7 +144,7 @@
          <div class="mu-page-breadcrumb-area">
            <h2>BLOG</h2>
            <ol class="breadcrumb">
-            <li><a href="#">Trang chủ</a></li>            
+            <li><a href="index.php">Trang chủ</a></li>            
             <li class="active">Chia sẻ từ học viên</li>
           </ol>
          </div>
@@ -275,7 +275,7 @@
                         <!-- start blog social share -->
                         <div class="mu-blog-social">
                           <ul class="mu-news-social-nav">
-                            <li>MẠNG XÃ HỘI :</li>
+                             <li>MẠNG XÃ HỘI :</li>
                             <li><a href="https://www.facebook.com/devzone.vn"; target="_blank"><span class="fa fa-facebook"></span></a></li>
                       <li><a href="https://www.youtube.com/channel/UCZ89xqQ5QadBmyMh18Vbhig" ; target="_blank""><span class="fa fa-youtube"></span></a></li> 
                           </ul>
@@ -301,7 +301,7 @@
                     
                       <?php
               //1. Load file....
-                 $ket_noi = mysqli_connect("localhost", "root", "", "devzone.db");
+                 include('config.php');
               //2. Viết câu lệnh truy vấn để lấy ra được dữ liệu mong muốn ( khóa học đã lưu trong CSDL)
                 $sql = "  
                           SELECT * 

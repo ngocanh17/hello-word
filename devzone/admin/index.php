@@ -1,3 +1,23 @@
+<?php 
+    // Mục đích kiểm tra xem bạn có quyền truy cập trang này không thông qua BIẾN $_SESSION['da_dang_nhap']
+    session_start();
+    if (!$_SESSION["da_dang_nhap"]) {
+        echo "
+            <script type='text/javascript'>
+                window.alert('Bạn không có quyền truy cập');
+            </script>
+        ";
+
+        echo "
+            <script type='text/javascript'>
+                window.location.href='dang_nhap.php';
+            </script>
+        ";
+    }
+;?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,21 +38,14 @@
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Nội dung tìm kiếm..." aria-label="Nội dung tìm kiếm..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
-            </form>
+           
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Tùy chỉnh</a></li>
-                        <li><a class="dropdown-item" href="#!">Nhật ký</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Thoát</a></li>
+                        <li><a class="dropdown-item" href="dang_nhap.php">Đăng nhập tài khoản khác</a></li>
+                        <li><a class="dropdown-item" href="dang_xuat.php">Đăng xuất</a></li>
                     </ul>
                 </li>
             </ul>
@@ -79,7 +92,7 @@
 
          <?php  
                   //1.
-                $ket_noi = mysqli_connect("localhost","root","","devzone.db");
+                include('../config.php');
                  //2.
                 $sql1= "
                         SELECT *
@@ -127,55 +140,62 @@
                         <h1 class="mt-4">Quản trị hệ thống</h1>
                         
                         <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Quản trị liên hệ <br><?php echo $so_luong_lien_he;?> thông tin</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="col-xl-3 col-md-6" style="margin-left: 80px;">
+                                <div class="card bg-primary text-white mb-4" style="border: 1px solid #2e4757; width: 295px; height: 135px;">
+                                    <div class="card-body" style="color: black; background-color: #ffffff;">Quản trị liên hệ <div style="width: 30%;float: right;"><img src="../images/pic3.png"></div>
+                                    <br><?php echo $so_luong_lien_he;?> thông tin 
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between"  style="background-color: #2e4757">
                                         <a class="small text-white stretched-link" href="quan_tri_lien_he.php">chi tiết</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Quản trị người đăng kí <br><?php echo $so_luong_dang_ki_hoc;?> đăng kí học</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="col-xl-3 col-md-6" style="margin-left: 35px;">
+                                <div class="card bg-warning text-white mb-4" style="border: 1px solid #2e4757; width: 295px; height: 135px;">
+                                    <div class="card-body" style="color: black; background-color: #ffffff;">Quản trị người đăng kí <div style="width: 25%;float: right;"><img src="../images/pic2.png"></div>
+                                    <br><?php echo $so_luong_dang_ki_hoc;?> đăng kí học</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between" style="background-color: #2e4757">
                                         <a class="small text-white stretched-link" href="quan_tri_dang_ki_hoc.php">chi tiết</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Quản trị Blog <br><?php echo $so_luong_blog;?> blog</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="col-xl-3 col-md-6" style="margin-left: 35px;">
+                                <div class="card bg-success text-white mb-4" style="border: 1px solid #2e4757; width: 295px; height: 135px;">
+                                    <div class="card-body" style="color: black; background-color: #ffffff;">Quản trị Blog <div style="width: 30%;float: right;"><img src="../images/pic4.png"></div>
+                                    <br><?php echo $so_luong_blog;?> blog</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between" style="background-color: #2e4757">
                                         <a class="small text-white stretched-link" href="quan_tri_blog.php">chi tiết</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Quản trị người dùng <br><?php echo $so_luong_nguoi_dung;?> người dùng</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="col-xl-3 col-md-6" style="margin-left: 80px;">
+                                <div class="card bg-danger text-white mb-4" style="border: 1px solid #2e4757; width: 295px; height: 135px;">
+                                    <div class="card-body" style="color: black; background-color: #ffffff;">Quản trị người dùng <div style="width: 30%;float: right;"><img src="../images/pic1.png"></div>
+                                    <br><?php echo $so_luong_nguoi_dung;?> người dùng<br> </div> 
+                                    <div class="card-footer d-flex align-items-center justify-content-between" style="background-color: #2e4757">
                                         <a class="small text-white stretched-link" href="quan_tri_nguoi_dung.php">chi tiết</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Quản trị khóa học <br><?php echo $so_luong_khoa_hoc;?> khóa học</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="col-xl-3 col-md-6" style="margin-left: 35px;">
+                                <div class="card bg-success text-white mb-4" style="border: 1px solid #2e4757; width: 295px; height: 135px;">
+                                    <div class="card-body" style="color: black; background-color: #ffffff;">Quản trị khóa học <div style="width: 30%;float: right;"><img src="../images/pic5.png"></div>
+                                    <br><?php echo $so_luong_khoa_hoc;?> khóa học</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between" style="background-color: #2e4757">
                                         <a class="small text-white stretched-link" href="quan_tri_khoa_hoc.php">chi tiết</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Quản trị thành viên <br><?php echo $so_luong_thanh_vien;?> thành viên</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="col-xl-3 col-md-6" style="margin-left: 35px;">
+                                <div class="card bg-warning text-white mb-4" style="border: 1px solid #2e4757; width: 295px; height: 135px;">
+                                    <div class="card-body" style="color: black; background-color: #ffffff;">Quản trị thành viên <div style="width: 30%;float: right;"><img src="../images/pic6.png"></div>
+                                    <br><?php echo $so_luong_thanh_vien;?> thành viên</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between" style="background-color: #2e4757">
                                         <a class="small text-white stretched-link" href="quan_tri_thanh_vien.php">chi tiết</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>

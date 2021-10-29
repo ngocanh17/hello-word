@@ -13,30 +13,30 @@
     </head>
 
     <body class="sb-nav-fixed">
-    	<?php  
-	          //1.
-	         $ket_noi = mysqli_connect("localhost","root","","devzone.db");//may 
-	         //2.
-	         $lien_he_id = $_GET["id"];
-	         //3. 
-	         $sql= "
-	         		DELETE 
+        <?php  
+              //1.
+             include('../config.php');//may 
+             //2.
+             $lien_he_id = $_GET["id"];
+             //3. 
+             $sql= "
+                    DELETE 
                     FROM `tbl_lien_he` 
                     WHERE `tbl_lien_he`.`lien_he_id` ='".$lien_he_id."'
                     ";
-	              
-	          //4. thu thi cau lenh truy van (muc dich tra ve du lieu cac ban can)
-	          $noi_dung_lien_he = mysqli_query($ket_noi,$sql);
-	          //5. hiện ra thông báo các bạn đã thêm mới tin tức thành công
-	          echo "
-            	<script type='text/javascript'>
-            		window.alert('Bạn đã thực hiện xóa thành công');
-            	</script>
+                  
+              //4. thu thi cau lenh truy van (muc dich tra ve du lieu cac ban can)
+              $noi_dung_lien_he = mysqli_query($ket_noi,$sql);
+              //5. hiện ra thông báo các bạn đã thêm mới tin tức thành công
+              echo "
+                <script type='text/javascript'>
+                    window.alert('Bạn đã thực hiện xóa thành công');
+                </script>
             ";
-	          echo "
-            	<script type='text/javascript'>
-            		window.location.href='quan_tri_lien_he.php';
-            	</script>
+              echo "
+                <script type='text/javascript'>
+                    window.location.href='quan_tri_lien_he.php';
+                </script>
             ";
 
     ;?>
