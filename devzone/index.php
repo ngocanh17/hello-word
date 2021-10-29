@@ -332,7 +332,7 @@
                   <div class="mu-single-feature">
                     <span class="fa fa-book"></span>
                     <h4>Khóa học tại phòng lab </h4>
-                    <p>Giúp bạn nhận thức cơ bản về các khóa học, các bước tuần tự để lập trình, tạo ra các chương trình, hệ thống, hệ điều hành mà bạn muốn</p>
+                    <p>Giúp bạn nhận thức cơ bản về các khóa học, các bước tuần tự để lập trình, tạo ra các chương trình, hệ thống, hệ điều hành mà bạn muốn.</p>
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
@@ -367,7 +367,7 @@
                   <div class="mu-single-feature">
                     <span class="fa fa-certificate"></span>
                     <h4>Chứng chỉ</h4>
-                    <p >Sau khi học xong các bạn sẽ được hỗ trợ đăng ký thi một trong sáu chứng chỉ nghề nghiệp về lập trình nếu bạn có nhu cầu</p>
+                    <p >Sau khi học xong các bạn sẽ được hỗ trợ đăng ký thi một trong sáu chứng chỉ nghề nghiệp về lập trình nếu bạn có nhu cầu.</p>
                   </div>
                 </div>
               </div>
